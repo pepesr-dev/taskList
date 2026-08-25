@@ -1,7 +1,5 @@
 # TaskList
-
-Almacena las tareas.
-Ayuda al usuario a gestionar tareas.
+Aplicación para gestionar tareas
 
 ## 🚀 Demo
 [Ver sitio en vivo](###)

@@ -1,0 +1,31 @@
+services:
+  # Servicio de la Base de Datos
+  db:
+    image: mysql:8.0
+    container_name: taskList_mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 1234
+      MYSQL_DATABASE: taskList_db
+      MYSQL_USER: pepe
+      MYSQL_PASSWORD: 1234
+    ports:
+      - "3307:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+
+  # Servicio de la Aplicación PHP
+  app:
+    image: php:8.2-apache
+    container_name: taskList_php
+    restart: always
+    ports:
+      - "8080:80"
+    volumes:
+      - ./src:/var/www/html
+    command: sh -c "docker-php-ext-install pdo pdo_mysql && apache2-foreground"
+    depends_on:
+      - db
+
+volumes:
+  db_data:
