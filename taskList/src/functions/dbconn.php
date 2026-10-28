@@ -1,5 +1,5 @@
 <?php
-
+//Ruta
 require_once __DIR__ . "/../conf/db.php";
 
 
