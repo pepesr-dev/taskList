@@ -5,9 +5,9 @@
 
 function connectDB(): PDO
 {
-    $host = getenv('DB_HOST');
+    $host = getenv('DB_HOSTNAME');
     $port = getenv('DB_PORT') ?: '23087';
-    $db = getenv('DB_NAME');
+    $db = getenv('DB_SCHEMA');
     $user = getenv('DB_USER');
     $pass = getenv('DB_PASS');
 
@@ -20,7 +20,7 @@ function connectDB(): PDO
     try {
         return new PDO($dsn, $user, $pass, $options);
     } catch (\PDOException $e) {
-        error_log($e->getMessage());
-        die("Error de conexión a la base de datos.");
+        // Muestra el error real en pantalla temporalmente
+        die("Error: " . $e->getMessage());
     }
 }
