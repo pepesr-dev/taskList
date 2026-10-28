@@ -1,0 +1,5 @@
+
+node_modules/
+vendor/
+src/conf
+src/functions/db.conn.php

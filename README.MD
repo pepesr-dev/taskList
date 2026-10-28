@@ -1,18 +1,22 @@
 # TaskList
-Aplicación para gestionar tareas
+Aplicación básica para gestionar tareas.
+Crea, edita o elimina las tareas almacenadas.
 
-## 🚀 Demo
-[Ver sitio en vivo](###)
+## 📸 Captura de pantalla
+![TaskList](./screenShots/01taskList.png)
 
 ## 🛠️ Tecnologías utilizadas
 * HTML5 / CSS3 / SQL / MySQL / php
 * Framework: NO
-* API utilizada: NO
+* Docker: Si
 
 ## 📦 Instalación
-1. Clonar el repo: `#####`
-2. Instalar dependencias: `#####`
-3. Ejecutar: `#####`
 
-## 📸 Captura de pantalla
-![Descripción](#####)
+- Descarga el repositorio: `gh repo clone pepesr-dev/taskList`
+- Entra en la carpeta específica de la app: `cd taskList`
+- Ejecutar la función: `docker compose up -d`
+- Ver en el navegador: `localhost:8080`
+
+
+## Contribuciones
+Esta app no acepta contribuciones.
