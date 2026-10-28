@@ -1,23 +1,26 @@
 <?php
-//Ruta
-require_once __DIR__ . "/../conf/db.php";
+
+//require_once __DIR__ . "/../conf/db.php";
 
 
 function connectDB(): PDO
 {
+    $host = getenv('DB_HOST');
+    $port = getenv('DB_PORT') ?: '23087';
+    $db = getenv('DB_NAME');
+    $user = getenv('DB_USER');
+    $pass = getenv('DB_PASS');
 
+    $dsn = "mysql:host=$host;port=$port;dbname=$db;charset=utf8mb4";
 
     $options = [
         PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
     ];
 
     try {
-        $pdo = new PDO(DB_DSN, DB_USER, DB_PASS, $options);
-        // echo "Conexión realizada con exito <br>";
-        return $pdo;
+        return new PDO($dsn, $user, $pass, $options);
     } catch (\PDOException $e) {
-        //php -S localhost:8000
         error_log($e->getMessage());
-        die();
+        die("Error de conexión a la base de datos.");
     }
 }
